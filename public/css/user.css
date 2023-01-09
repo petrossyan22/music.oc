@@ -1,0 +1,35 @@
+#sign_up_form{
+    display: none;
+}
+#or_sign_in{
+    cursor: pointer;
+    display: none;
+}
+#or_sign_up{
+    cursor: pointer;
+}
+#profile_picture{
+    display: block;
+    width: 70%;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+#edit_profile_image{
+    cursor: pointer;
+    display: block;
+    position: relative;
+    right: -30%;
+    top: -30px;
+}
+#change_profie_image_form{
+    display: none;
+}
+#close_change_profie_image_form{
+    cursor: pointer;
+    display: none;
+    position: relative;
+    right: -30%;
+    top: -30px;
+}
+
+

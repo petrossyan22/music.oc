@@ -1,0 +1,12 @@
+.recomendation_link{
+    position: relative;
+}
+.trash{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px !important;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.966);
+    color: rgba(255, 94, 0, 0.795) !important;
+}

@@ -1,0 +1,113 @@
+#content_container{
+    position: relative;
+    top: 50px;
+    z-index: 1;
+    /* height: calc(100% - 80px); */
+    background-color:#1b1b1b;
+    box-sizing: border-box;
+    width: 70%;
+}
+#content{
+    padding: 20px;
+    position: relative;
+    top: 0;
+    z-index: 2;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+#sidebar{
+    position: fixed;
+    width: 30%;
+    top: 76px;
+    right: 0;
+    z-index: 3;
+    height: 100%;
+    padding-bottom:60px;
+    overflow-x: auto;
+    display: block;
+    background-color: rgb(30, 30, 31);
+}
+#sidebar .sidebar_link:first-child{
+    color: rgb(184, 79, 9);
+    display: block;
+    width: 100%;
+    border: 2px solid rgb(4, 41, 22);
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+#sidebar .sidebar_link:not(:first-child){
+    color: rgb(184, 79, 9);
+    display: block;
+    width: 100%;
+    border: 2px solid rgb(4, 41, 22);
+    margin-top: 5px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+.walcome_text{
+    color: rgb(184, 9, 117);
+    display: block;
+    width: 100%;
+    border: 2px solid rgb(4, 41, 22);
+    margin-top: 5px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    display: block;
+    max-width: 100%;
+    color: #dddddd;
+    
+  }
+  table td{
+    word-wrap:break-word;
+    word-break: break-all;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #646262;
+    color: #1b1b1b;
+  }
+
+.quick_view{
+    background-color: rgb(64, 223, 24);
+    padding: 2px;
+    box-sizing: border-box;
+    border: 0;
+    color: rgb(8, 77, 77);
+}
+.create_button{
+    background-color: rgb(64, 223, 24);
+    padding: 2px;
+    box-sizing: border-box;
+    border: 0;
+    color: rgb(8, 77, 77);
+    font-size: 14px;
+}
+.back_button{
+    background-color: rgb(211, 110, 15);
+    padding: 2px;
+    box-sizing: border-box;
+    border: 0;
+    color: rgb(8, 77, 77);
+    font-size: 14px;
+}
+.go{
+    background-color: rgb(211, 110, 15);
+    padding: 2px 18px;
+    box-sizing: border-box;
+    border: 0;
+    color: rgb(8, 77, 77);
+    font-size: 14px;
+}
+form input[type=file]{
+    color: red;
+}

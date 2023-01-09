@@ -1,0 +1,68 @@
+@media screen and (max-width: 832px) {
+    #content_container {
+        top: 30px;
+    }
+    .video_link{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        /* max-width: 50%; */
+    }
+}
+@media screen and (max-width: 600px) {
+    #navbar{
+        padding: 10px;
+    }
+    .video_link{
+       width: 40%;
+        /* max-width: 50%; */
+    }
+    .logo{
+        display: none;
+    }
+    #sm_logo{
+        display: block;
+        height: 15px;
+        width: 15px;
+    }
+    #sm_logo img{
+        display: block;
+        height: 15px;
+        width: 15px;
+    }
+    #search_form{
+        display: none;
+        width: 100%;
+    }
+    #open_search_form{
+        display: block;
+        color: rgb(187, 24, 179);
+        font-size: 15px;
+    }
+    .auth{
+        border: none;
+    }
+}
+@media screen and (max-width: 400px) {
+    .video_link{
+       width: 100%;
+       white-space: pre-line;
+       text-overflow:initial;
+       border-bottom: 1px solid silver;
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 832px) {
+    .recomendation_link a{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 50%;
+    }
+}
