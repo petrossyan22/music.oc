@@ -46,10 +46,14 @@ Route::get("/isliked/{video_id}", function($data){
         $join->on("likes.user_id", "=", "users.id")->where('likes.video_id', '=', $video_id)->where('likes.user_id', '=', $user_id);
         
     })->get();
-    if($likes == []){
+    if(count($likes) === 0){
         return new JsonResponse(false);
     }else{
         return new JsonResponse(true);
     }
     
+});
+
+Route::post("/like", function(Request $request){
+    return new JsonResponse($request->all());
 });
