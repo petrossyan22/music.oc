@@ -13,6 +13,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/video.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/default.css">
     <link rel="stylesheet" href="/css/media.css">

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\VideosController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\WatchController;
+use App\Http\Controllers\AccountController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,7 @@ Route::get('/get-auth-user-id', function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/account/{id}', [App\Http\Controllers\AccountController::class, 'index'])->name('account');
 
 
 Route::get('/admin', [AdminController::class, "index"])->middleware(AdminMiddleware::class);

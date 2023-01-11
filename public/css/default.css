@@ -3,6 +3,7 @@ html, body{
     background-color:#111010;
     box-sizing: border-box;
     margin: 0;
+    color: orangered;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -71,10 +72,11 @@ html, body{
     width: 100%;
     border:0;
     border-radius:8px;
-    background-color:#101010;
+    background-color:black;
     height: 80%;
     color: rgb(124, 22, 192);
     padding-left: 5px;
+    box-shadow: 1px 1px 1px 1px #111431;
 }
 #search_form input[type=search]::placeholder{
     color: rgb(124, 22, 192);
@@ -107,7 +109,7 @@ html, body{
     top: 40px;
     z-index: 1;
     width: 60%;
-    /* height: calc(100% - 80px); */
+    height: calc(100% - 160px); 
     background-color:#111010;
     box-sizing: border-box;
 }
@@ -138,10 +140,7 @@ html, body{
     outline: none;
     border-radius: 8px;
 }
-.slide_link{
-    display: block;
-    height: 20px;
-}
+
 #player_container{
     display: block;
     width: 100%;
@@ -183,14 +182,14 @@ html, body{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 25px;
     justify-content: space-around;
     background-color:   #080808;
     padding: 10px 0;
 
 }
 .video_links_divider{
-    border: 1px solid black;
+/*    border: 1px solid black;*/
 }
 .video_links_title{
     color: rgb(143, 51, 9);
@@ -200,10 +199,11 @@ html, body{
     display: block;
     width: 19%;
     max-width: 20%;
+    margin: 2px 30px;
     text-align: center;
 }
 .video_link a{
-    color: grey;
+    display: block;
 }
 
 .video_link img{
@@ -212,27 +212,6 @@ html, body{
     margin: auto;
 }
 
-.recomendation_link{
-    display: flex;
-    width: 100%;
-    background-color: #f2f3f4;
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-.recomendation_link img{
-    display: block;
-    width: 50%;
-}
-.recomendation_link a{
-    display: block;
-    width: 50%;
-    color: gray;
-    font-weight: bold;
-    
-}
-.recomendation_link a:hover{
-    text-decoration: none;
-}
 footer{
     position: fixed;
     bottom: 0px;

@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index(){
-        $videos = Video::latest()->take(8)->get();
+        $videos = Video::orderBy('id', 'DESC')->take(8)->get();
         return view("index", compact("videos"));
     }
 }

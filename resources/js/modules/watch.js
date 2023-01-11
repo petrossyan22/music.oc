@@ -8,7 +8,7 @@ export default function Watch(){
     
         
         
-        let video_links = $('.recomendation_link a');
+        let video_links = $('.link');
         // console.log(video_links);
         let links = [];
         
