@@ -16,12 +16,14 @@
         @endforeach 
         __ {{$video["title"]}}
         <br>
-        <span id="is_from_playlist"></span>
-        <span id="like_form">
+        @if (Auth::check()) 
+            <span id="is_from_playlist"></span>
+            <span id="like_form">
 
-        </span>
+            </span>
 
-        <span id="likes"></span>
+            <span id="likes"></span>
+        @endif
     </div>
     <div id="recomendation">
         @foreach($videos as $v)

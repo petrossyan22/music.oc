@@ -141,19 +141,7 @@ html, body{
     border-radius: 8px;
 }
 
-#player_container{
-    display: block;
-    width: 100%;
-    text-align: center;
-    color: orangered;
-    padding-top: 10px;
-}
-#player_container video{
-    outline: none;
-    border: 2px solid rgb(83, 27, 3);
-    border-bottom: 5px solid rgb(75, 4, 85);
-    border-radius: 8px;
-}
+
 .search_result_container{
     display: block;
     width: 60%;

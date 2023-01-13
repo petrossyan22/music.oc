@@ -28,24 +28,17 @@ Route::get("/videos", function(){
 Route::get("/videos/{id}", function(){
     return new JsonResponse(5);
 });
+
 Route::get("/likes/{video_id}", function($video_id){
-
-    $likes = DB::table("likes")->join("users", function($join) use($video_id){
-
-        $join->on("likes.user_id", "=", "users.id")->where('likes.video_id', '=', $video_id);
-    })->get();
+    $likes = DB::table("likes")->where('video_id', $video_id)->get();
     return new JsonResponse($likes);
 });
 
-Route::get("/isliked/{video_id}", function($data){
+Route::get("/isliked/{data}", function($data){
     $data = json_decode($data);
     $user_id = $data[0];
     $video_id = $data[1];
-    $likes = DB::table("likes")->join("users", function($join) use($video_id, $user_id){
-        // dd($user_id);
-        $join->on("likes.user_id", "=", "users.id")->where('likes.video_id', '=', $video_id)->where('likes.user_id', '=', $user_id);
-        
-    })->get();
+    $likes = DB::table("likes")->where(["user_id" => $user_id, "video_id" => $video_id])->get();
     if(count($likes) === 0){
         return new JsonResponse(false);
     }else{
@@ -55,5 +48,20 @@ Route::get("/isliked/{video_id}", function($data){
 });
 
 Route::post("/like", function(Request $request){
-    return new JsonResponse($request->all());
+    $user_id = $request->input("user_id");
+    $video_id = $request->input("video_id");
+    DB::table('likes')->where(["user_id" => $user_id, "video_id" => $video_id])->delete();
+    DB::table('likes')->insert([
+        "user_id" => $user_id,
+        "video_id" => $video_id
+    ]);
+    return new JsonResponse(["status" => "ok"]);
 });
+Route::get("/unlike/{data}", function($data){
+    $data = json_decode($data);
+    $user_id = $data[0];
+    $video_id = $data[1];
+    DB::table('likes')->where(["user_id" => $user_id, "video_id" => $video_id])->delete();
+    return new JsonResponse(true);
+});
+
