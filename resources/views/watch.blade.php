@@ -10,7 +10,6 @@
             <i class="fa fa-play text_success" id="play"></i>
             <i class="fa fa-expand text_success" id="play"></i>
         </div> -->
-
         @foreach ($video->user as $user)
             {{$user["name"]}} -
         @endforeach 
@@ -30,10 +29,11 @@
             <div class="recomendation_link" data-id="{{$v['id']}}" data-src="{{$v['video']}}"data-poster="{{$v['poster']}}">
                 <img src="/poster_uploads/{{$v['poster']}}">
                 <div>
-                    <a href="/watch/{{$v['id']}}" class="link">
+                    <a href="/watch/{{$v['id']}}" class="link text_primary pb_2">
                     @foreach ($v->user as $user)
                         {{$user["name"]}} -
                     @endforeach  __ {{$v['title']}}
+                    <!-- <hr class="border_bottom_danger_1"> -->
                 </a>
                 @foreach ($v->user as $user)
                     <a href="/account/{{$user['id']}}">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\VideosController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\WatchController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\SearchController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -41,3 +42,5 @@ Route::resource("admin/users", UsersController::class);
 Route::resource("admin/videos", VideosController::class);
 
 Route::get("watch/{id}", [WatchController::class, "index"]);
+
+Route::get('/search', [SearchController::class, 'index']);

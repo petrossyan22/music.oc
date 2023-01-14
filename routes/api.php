@@ -57,6 +57,7 @@ Route::post("/like", function(Request $request){
     ]);
     return new JsonResponse(["status" => "ok"]);
 });
+
 Route::get("/unlike/{data}", function($data){
     $data = json_decode($data);
     $user_id = $data[0];
@@ -64,4 +65,6 @@ Route::get("/unlike/{data}", function($data){
     DB::table('likes')->where(["user_id" => $user_id, "video_id" => $video_id])->delete();
     return new JsonResponse(true);
 });
+
+
 

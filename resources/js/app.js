@@ -5,6 +5,8 @@ import Watch from './modules/watch';
 // import videoControl from './modules/video_control';
 import $ from "jquery";
 
+// import search from './modules/search';
+
 media();
 Index();
 
@@ -14,6 +16,8 @@ async function getAuthUserId(){
     return res.id;
 }
 const routeName = window.location.pathname.slice(1,window.location.pathname.length).split("/")[0];
+
+
 if (routeName === "watch") {
     // videoControl();
     let prevUrl = document.referrer

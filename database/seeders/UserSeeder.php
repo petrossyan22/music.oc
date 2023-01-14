@@ -92,6 +92,13 @@ class UserSeeder extends Seeder
                 "email"=>"Rihanna@Rihanna.com",
                 "password"=>bcrypt("123456789"),
                 "role"=>"singer"
+            ],
+            [
+                // 13
+                "name"=>"Paloma Faith",
+                "email"=>"PalomaFaith@PalomaFaith.com",
+                "password"=>bcrypt("123456789"),
+                "role"=>"singer"
             ]
         ]);
     }

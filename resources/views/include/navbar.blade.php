@@ -8,7 +8,8 @@
     </a>
     <i id="open_search_form" class="fa fa-search"></i>
     <i id="close_search_form" class="fa fa-arrow-left"></i>
-    <form method="GET" id="search_form">
+    <form method="GET" id="search_form" action="/search">
+        @csrf
         <input id="search" name="search" type="search" placeholder="Search" aria-label="Search">
         <button type="submit">
             <i class="fa fa-search"></i>

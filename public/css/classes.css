@@ -16,7 +16,7 @@
 /*------------ text colors ---------------------------*/
 
 .text_primary{
-    color: #3B71CA;
+    color: #3B71CA !important;
 }
 .text_secondary{
     color: #9FA6B2;
@@ -60,6 +60,9 @@
 .pl_5{
     padding-left: 50px;
 }
+.pb_2{
+    padding-bottom: 4px;
+}
 
 /*------------ /end padding styles ---------------------------*/
 /*------------ Backgound colord---------------------------*/
@@ -92,6 +95,18 @@
 .border_bottom_dark_2{
     border-bottom: 2px solid #332D2D;
 }
+.border_success_1{
+    border: 1px solid #14A44D;
+}
+.border_danger_1{
+    border: 1px solid #DC4C64;
+}
 
+.border_bottom_success_1{
+    border-bottom: 1px solid #14A44D;
+}
+.border_bottom_danger_1{
+    border-bottom: 1px solid #DC4C64;
+}
 
 /*------------ /end Border colors ---------------------------*/

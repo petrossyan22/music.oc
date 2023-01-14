@@ -63,6 +63,12 @@ class VideoSeeder extends Seeder
                 "title"=>"Love_On_The_Brain",
                 "poster"=>"love on the brain.jpg",
                 "video"=>"Rihanna_-_Love_On_The_Brain__lyrics_.mp4",
+            ],
+            [
+                // 9
+                "title"=>"Only Love Can Hurt Like This",
+                "poster"=>"maxresdefault.jpg",
+                "video"=>"paloma_faith_only_love_can_hurt_like_this_lyrics_h264_45891.mp4",
             ]
         ];
         $user_video = [
@@ -113,6 +119,10 @@ class VideoSeeder extends Seeder
             [
                 "user_id" => 12,
                 "video_id" => 8
+            ],
+            [
+                "user_id" => 13,
+                "video_id" => 9
             ]
         ];
         $likes = [
