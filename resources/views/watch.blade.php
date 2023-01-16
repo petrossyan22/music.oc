@@ -16,12 +16,13 @@
         __ {{$video["title"]}}
         <br>
         @if (Auth::check()) 
-            <span id="is_from_playlist"></span>
             <span id="like_form">
 
             </span>
 
-            <span id="likes"></span>
+            <sub id="likes"></sub>  &nbsp;
+            <span id="is_from_playlist"></span>
+
         @endif
     </div>
     <div id="recomendation">

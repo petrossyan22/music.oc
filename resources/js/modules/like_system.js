@@ -8,18 +8,7 @@ export default class LikeSystem{
 
         this.isLiked(this.user_id, this.video_id);
         this.getLikes(this.video_id);
-
-        // this.like.apply(this, []);
-        // this.unlike.apply([this.user_id, this.video_id, this]);
-        // $(document).ready(()=>{
-        //     $("#like").click(()=>{
-        //         alert(999);
-        //         this.like(this.user_id, this.video_id);
-        //     });
-        //     $("#unlike").click(()=>{
-        //         this.unlike(this.user_id, this.video_id);
-        //     });
-        // });
+        
     }
     getData(){
         return this;
@@ -28,8 +17,6 @@ export default class LikeSystem{
         let arr = [];
         arr.push(user_id);
         arr.push(video_id);
-        // like.apply([video_id, user_id]);
-        // unlike.apply([video_id, user_id]);
         arr = JSON.stringify(arr);
         let res = await fetch(`/api/isliked/${arr}`);
         res = await res.json();
@@ -52,7 +39,7 @@ export default class LikeSystem{
     async getLikes(video_id){
         let res = await fetch(`/api/likes/${video_id}`);
         res = await res.json();
-        console.log(res);
+        // console.log(res);
         let likes = res.length;
         $(`#likes`).text("");
         $(`#likes`).text(`${likes}`);
@@ -61,7 +48,7 @@ export default class LikeSystem{
         let formData = {};
         formData.user_id = this.user_id;
         formData.video_id = this.video_id;
-        console.log(JSON.stringify(formData));
+        // console.log(JSON.stringify(formData));
         let res = await fetch(`/api/like`, {
             headers: {
                 "Content-Type": "application/json",
@@ -72,7 +59,7 @@ export default class LikeSystem{
             body: JSON.stringify(formData)
         });
         res = await res.json();
-        console.log(res.status);
+        // console.log(res.status);
         if (res.status === "ok") {
             await this.isLiked(this.user_id, this.video_id);
             await this.getLikes(this.video_id);

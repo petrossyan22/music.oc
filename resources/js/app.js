@@ -5,7 +5,7 @@ import Watch from './modules/watch';
 // import videoControl from './modules/video_control';
 import $ from "jquery";
 
-// import search from './modules/search';
+import isFromPlaylist from './modules/isFromPlaylist';
 
 media();
 Index();
@@ -16,7 +16,7 @@ async function getAuthUserId(){
     return res.id;
 }
 const routeName = window.location.pathname.slice(1,window.location.pathname.length).split("/")[0];
-
+const video_id = window.location.pathname.slice(1,window.location.pathname.length).split("/")[1];
 
 if (routeName === "watch") {
     // videoControl();
@@ -29,8 +29,10 @@ if (routeName === "watch") {
         localStorage.removeItem('windex');
     }
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    Watch();
     getAuthUserId().then(id=>{
+        Watch(id, token, video_id);
         let l = new LikeSystem({"token":token, "id": id});
+        isFromPlaylist(video_id, id);
     });
+    
 }

@@ -65,6 +65,30 @@ Route::get("/unlike/{data}", function($data){
     DB::table('likes')->where(["user_id" => $user_id, "video_id" => $video_id])->delete();
     return new JsonResponse(true);
 });
+Route::get("/is-from-playlist/{data}", function($data){
+    $data = json_decode($data);
+    $user_id = $data[0];
+    $video_id = $data[1];
+    $playlist = DB::table('playlists')->where(["user_id" => $user_id, "video_id" => $video_id])->first();
+    return new JsonResponse(!empty($playlist));
+});
+Route::get("/add-to-playlist/{data}", function($data){
+    $data = json_decode($data);
+    $user_id = $data[0];
+    $video_id = $data[1];
+    $playlist = DB::table('playlists')->insert(["user_id" => $user_id, "video_id" => $video_id]);
+    return new JsonResponse("ok");
+});
 
-
+Route::post("/volume", function(Request $request){
+    $user_id = $request->input("user_id");
+    $volume = $request->input("volume");
+    $volume = DB::table('volumes')->insert(["user_id" => $user_id, "volume" => $volume]);
+    return new JsonResponse($request->all());
+});
+Route::get("/volume/{user_id}", function($user_id){
+    $data = json_decode($user_id);
+    $volume = DB::table('volumes')->where("user_id", $user_id)->first();
+    return new JsonResponse($volume);
+});
 
