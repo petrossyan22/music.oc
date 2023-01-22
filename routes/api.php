@@ -83,7 +83,14 @@ Route::get("/add-to-playlist/{data}", function($data){
 Route::post("/volume", function(Request $request){
     $user_id = $request->input("user_id");
     $volume = $request->input("volume");
-    $volume = DB::table('volumes')->insert(["user_id" => $user_id, "volume" => $volume]);
+    $v = DB::table('volumes')->where("user_id", $user_id)->first();
+
+    if (!empty($v)) {
+        $volume = DB::table('volumes')->where('user_id', $user_id)->update(["user_id" => $user_id, "volume" => $volume]);
+    }else{
+        $volume = DB::table('volumes')->insert(["user_id" => $user_id, "volume" => $volume]);
+    }
+    
     return new JsonResponse($request->all());
 });
 Route::get("/volume/{user_id}", function($user_id){

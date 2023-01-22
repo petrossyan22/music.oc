@@ -7,10 +7,15 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\WatchController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\FBController;
+use App\Http\Controllers\PlaylistController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\JsonResponse;
+use App\Models\User;
+
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +28,12 @@ use Illuminate\Http\JsonResponse;
 |
 */
 
+
+Route::get('/', [IndexController::class, "index"]);
+
+
+
+
 Route::get('/', [IndexController::class, "index"]);
 
 Route::get('/get-auth-user-id', function(){
@@ -33,6 +44,7 @@ Route::get('/get-auth-user-id', function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/home', [App\Http\Controllers\HomeController::class, 'message'])->name('home');
 Route::get('/account/{id}', [App\Http\Controllers\AccountController::class, 'index'])->name('account');
 
 
@@ -44,3 +56,11 @@ Route::resource("admin/videos", VideosController::class);
 Route::get("watch/{id}", [WatchController::class, "index"]);
 
 Route::get('/search', [SearchController::class, 'index']);
+
+Route::get("playlist/{id}", [PlaylistController::class, "index"]);
+
+
+Route::get('/fb/tologinpage', function (){
+	return Socialite::driver('facebook')->asPopup()->redirect();
+});
+Route::get('/fb/login', [FBController::class, 'index']);

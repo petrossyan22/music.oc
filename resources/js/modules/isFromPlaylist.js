@@ -26,11 +26,11 @@ export default async function isFromPlaylist(video_id, user_id){
 
 	if (res === false) {
 		$("#is_from_playlist").html(`
-			<a href="#" id='add_to_playlist'>Add To Playlist</a>
+			<a href="#" id='add_to_playlist' class='text_primary'>Add To Playlist</a>
 		`);
 	}else{
 		$("#is_from_playlist").html(`
-			<i class="fa fa-check text_success"></i>
+			<i class="fa fa-check text_bold text_primary"></i>
 			<a href="/playlist/${user_id}" class="text_bold text_primary">Go To Playlist</a>
 		`);
 	}

@@ -5,7 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="form_header">{{ __('Login') }}</div>
+                <div class="form_header" style="display: flex; align-items: center;"> &nbsp
+                    {{ __('Login') }}
+                    ||  &nbsp
+                    <a class="bg_primary text_light p_1_5" href="/fb/tologinpage">Continue With Facebook</a>
+                </div>
 
                 <div class="card-body">
                     <form class="login-form" method="POST" action="{{ route('login') }}">
@@ -71,3 +75,5 @@
     </div>
 </div>
 @endsection
+
+

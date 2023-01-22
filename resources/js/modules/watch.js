@@ -2,37 +2,45 @@ import $ from "jquery";
 
 export default function Watch(user_id, token){
     let video = document.getElementById("video");
-    if(user_id !== undefined){
-        fetch(`/api/volume/${user_id}`)
-                .then(volume=>volume.json())
-                .then(volume=>{
-                    console.log(volume);
-                    if(JSON.stringify(volume) !== '{}'){
-                        console.log(volume);
-                        video.volume = volume.volume;
-                    }
-                });
-            video.addEventListener('volumechange', (event) => {
-                console.log(video.volume);
-                let formData = {};
-                formData.user_id = user_id;
-                formData.volume = video.volume;
-                fetch('/api/volume',{
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-Requested-With": "XMLHttpRequest",
-                        "X-CSRF-TOKEN": token
-                    },
-                    method: 'post',
-                    body: JSON.stringify(formData)
-                }).then(data=>data.json())
-                .then(volume=>console.log(volume));
-            });
-    }
     $( document ).ready(async ()=>{
-    
-        let video_id;
-        let user_id;
+        // Video volume save and get in/from volumes table
+        if(user_id !== undefined){
+            fetch(`/api/volume/${user_id}`)
+                    .then(volume=>volume.json())
+                    .then(volume=>{
+                        console.log(volume);
+                        if(JSON.stringify(volume) !== '{}'){
+                            console.log(volume);
+                            video.volume = volume.volume;
+                            video.play();
+                        }else{
+                            video.play();
+                        }
+                    });
+                video.addEventListener('volumechange', (event) => {
+                    console.log(video.volume);
+                    let formData = {};
+                    formData.user_id = user_id;
+                    formData.volume = video.volume;
+                    fetch('/api/volume',{
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-Requested-With": "XMLHttpRequest",
+                            "X-CSRF-TOKEN": token
+                        },
+                        method: 'post',
+                        body: JSON.stringify(formData)
+                    }).then(data=>data.json())
+                    .then(volume=>console.log(volume));
+                });
+        }else{
+            video.play();
+        }
+        // /end Video volume save and get in/from volumes table
+
+
+        // let video_id;
+        // let user_id;
     
         
         

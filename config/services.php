@@ -30,5 +30,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'facebook' => [
+        'client_id' => '561307572705011',
+        'client_secret' => '97c90d5cf600a992f48256d38c031878',
+        'redirect' => 'https://music.loc/fb/login'
+    ]
 
 ];

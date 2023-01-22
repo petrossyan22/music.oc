@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class HomeController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -23,6 +23,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $users = User::all();
+        \App\Events\MyEvent::dispatch("apeeeeee");
+        // event(new \App\Events\MyEvent('hello world'));
+        return view('home', compact('users'));
+    }
+    public function message(Request $request)
+    {
+        $users = User::all();
+        $message = $request->all();
+        \App\Events\MyEvent::dispatch($message);
+        // event(new \App\Events\MyEvent('hello world'));
+        return view('home', compact('users'));
     }
 }

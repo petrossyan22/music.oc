@@ -63,6 +63,14 @@
 .pb_2{
     padding-bottom: 4px;
 }
+.p_1_5{
+    padding: 5px 10px;
+}
+
+.mt_5{
+    margin-top: 25px;
+}
+
 
 /*------------ /end padding styles ---------------------------*/
 /*------------ Backgound colord---------------------------*/
@@ -76,7 +84,12 @@
 .bg_darkest{
     background-color: black;
 }
-
+.bg_info{
+    background-color: #54B4D3;
+}
+.bg_primary{
+    background-color: #3B71CA;
+}
 /*------------ /end Backgound colors ---------------------------*/
 /*------------ Border color---------------------------*/
 
@@ -110,3 +123,4 @@
 }
 
 /*------------ /end Border colors ---------------------------*/
+

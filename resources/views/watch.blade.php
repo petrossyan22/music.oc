@@ -4,7 +4,7 @@
         <video src="/video_uploads/{{$video['video']}}"
             poster="/poster_uploads/{{$video['poster']}}" 
             id="video"
-            data-id="{{$video['id']}}" autoplay controls >
+            data-id="{{$video['id']}}" controls >
         </video>
         <!-- <div class="control_panel">
             <i class="fa fa-play text_success" id="play"></i>
@@ -21,7 +21,7 @@
             </span>
 
             <sub id="likes"></sub>  &nbsp;
-            <span id="is_from_playlist"></span>
+            <span id="is_from_playlist" class="text_primary text_bold"></span>
 
         @endif
     </div>
